@@ -18,7 +18,350 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #f5f5f5;
+  font-family: 'Merriweather', serif;
 	font-size: 16px;
 	line-height: 1.6;
 }
 
+.kontejner {
+  background-color: white;
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+.popisek-fota {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+p {
+  padding: 0 30px;
+}
+
+section {
+  padding: 10px 0;
+}
+
+/*oddělovač h2*/
+
+h2::after {
+  content: " ";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #629fe0;
+  margin-left: -30px;
+  margin-top: 20px;
+}
+
+
+/*stylování obrázků*/
+
+section img  {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.popisek-fota {
+  opacity: 0.6;
+  text-align: center;
+  margin: 0;
+  padding: 5px 0;
+  line-height: 1.2;
+  font-size: 12px;
+}
+
+.popisek-fota a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.fotogalerie .popisek-fota::first-line {
+  font-weight: 700;
+}
+
+/*hlavička*/
+
+header {
+  color:white;
+  text-align: center;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/island-hlavicka.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px 10px;
+}
+
+.autor::before {
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: white;
+  margin: 10px auto;
+}
+
+.autor,
+.autor::before {
+  opacity: 0.6;
+}
+
+header p {
+  padding-bottom: 10px;
+}
+
+
+/*menu*/
+
+.menu ul {
+  margin: 30px;
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  opacity: 0.4;
+
+}
+
+.menu a:hover {
+  background-color: #acaaab;
+  color: white;
+
+}
+
+/*patička*/
+
+footer {
+  background-image: linear-gradient(180deg, rgba(191,191,191,0.7094188017003676) 0%, rgba(237,235,235,0.9251050762101716) 13%);
+  padding: 30px 0;
+}
+
+footer p,
+footer a {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+}
+
+/* verze tablet*/
+
+@media screen and (min-width: 540px) {
+
+
+  /*menu*/
+  .menu {
+    text-align: center;
+    margin: 20px 30px;
+  }
+
+  .menu ul {
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .menu li {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-basis: 25%;
+  }
+
+  .menu a {
+    padding: 10px;
+  }
+
+  .okraj {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /*sekce fotogalerie*/
+
+  .fotogalerie {
+    padding: 0;
+  }
+  
+  /*obrázky a popisky mimo fotogalerii*/
+
+  .foto  {
+    position: relative;
+  }
+  
+  .foto .popisek-fota {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .foto .popisek-fota,
+  .foto .popisek-fota a {
+    color: white;
+    opacity: 1;
+  }
+
+  /*fotogalerie*/
+
+  .fotogalerie-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galerie {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .galerie img {
+    margin:0;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+    display:block;
+  }
+
+  .galerie img:hover {
+    transform: scale(1.15);
+  }
+
+  .galerie .popisek {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0, 0.5);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+
+  .galerie:hover .popisek {
+   height: 40%;
+  }
+
+  .galerie .popisek-fota {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .galerie .popisek-fota,
+  .galerie .popisek-fota a {
+    color: white;
+    opacity: 1;
+    font-size: 14px;
+    
+  }
+
+}
+
+
+/* verze PC*/
+
+@media screen and (min-width: 960px) {
+  
+  .kontejner {
+    max-width: 960px;
+    margin: -70px auto 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  /*hlavicka*/
+  .autor {
+    padding-bottom: 70px;
+  }
+
+  /*obsah*/
+
+  .obsah {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    grid-template-rows: repeat(7, auto);
+
+    grid-template-areas: 
+      "menu uvod uvod"
+      "obrazek1 obrazek1 obrazek1"
+      "proc proc ."
+      "obrazek2 obrazek2 obrazek2"
+      ". videt videt"
+      "obrazek3 obrazek3 obrazek3"
+      ". zmena zmena";
+    
+  }
+
+  /*menu*/
+
+  .menu {
+    margin-top: 0;
+    grid-area: menu;
+  }
+
+  .menu ul {
+    display: block;
+  }
+
+  .okraj {
+    border-right: none;
+  }
+  
+  .uvod .odstavec {
+    grid-area: uvod;
+  }
+ 
+  .uvod .foto {
+    grid-area: obrazek1;
+  }
+
+  .proc .odstavec {
+    grid-area: proc;
+  }
+ 
+  .proc .foto {
+    grid-area: obrazek2;
+  }
+
+  .videt .odstavec {
+    grid-area: videt;
+  }
+ 
+  .videt .foto {
+    grid-area: obrazek3;
+  }
+
+  .zmena .odstavec {
+    grid-area: zmena;
+  }
+
+  /*fotogalerie*/
+
+  .fotogalerie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /*patička*/
+  footer {
+    max-width: 960px;
+    margin: 0 auto;
+    background-image: none;
+  }
+
+  footer p,
+  footer a {
+    padding-left: 0;
+  }
+
+}
