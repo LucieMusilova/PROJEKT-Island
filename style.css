@@ -227,7 +227,7 @@ footer a {
   .galerie img {
     margin:0;
     width: 100%;
-    transition: 0.5s all ease-in-out;
+    transition: 0.5s all;
     display:block;
   }
 
@@ -244,7 +244,7 @@ footer a {
     overflow: hidden;
     width: 100%;
     height: 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
   }
 
   .galerie:hover .popisek {
